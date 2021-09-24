@@ -29,13 +29,7 @@ const Convert = ({ language, text }) => {
       );
       setTranslatedText(data.data.translations[0].translatedText);
     };
-    const timeId = setTimeout(() => {
-      doTranslation();
-    }, 350);
-
-    return () => {
-      clearTimeout(timeId);
-    };
+    doTranslation();
   }, [language, debouncedText]);
 
   return (
