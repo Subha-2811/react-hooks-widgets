@@ -23,7 +23,9 @@ const Dropdown = ({ label, selected, onSelectedChange, options }) => {
     // Cleanup function
     return () => {
       // Removing the event listner from the body when the Component is Unmounted
-      document.body.removeEventListener("click", onBodyClick);
+      document.body.removeEventListener("click", onBodyClick, {
+        capture: true,
+      });
     };
   }, []);
 
